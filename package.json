@@ -1,0 +1,27 @@
+{
+  "name": "gar-provider",
+  "module": "src/backend/gar_apis.ts",
+  "type": "module",
+  "license": "See LICENSE",
+  "scripts": {
+    "start": "bun run build && bun run --watch src/backend/index.ts",
+    "build": "bun build src/frontend/index.tsx --sourcemap=linked --outdir build/public && cp src/frontend/index.html build/public"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/react": "^18.3.13",
+    "@types/react-dom": "^18.3.1"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@elastic/eui": "^98.1.0",
+    "@types/file-saver": "^2.0.7",
+    "axios": "^1.7.8",
+    "file-saver": "^2.0.5",
+    "pretty-bytes": "^6.1.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  }
+}
