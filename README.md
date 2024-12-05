@@ -6,6 +6,8 @@ To install dependencies:
 bun install
 ```
 
+See `.env.sample` for the environment variables required.
+
 To run:
 
 ```bash
