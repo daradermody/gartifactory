@@ -1,22 +1,26 @@
 {
   "name": "gar-provider",
-  "module": "src/backend/gar_apis.ts",
   "type": "module",
+  "main": "index.js",
   "license": "See LICENSE",
   "scripts": {
-    "start": "bun run build && bun run --watch src/backend/index.ts",
-    "build": "bun build src/frontend/index.tsx --sourcemap=linked --outdir build/public && cp src/frontend/index.html build/public"
+    "start": "bun run build && cd build && npx @google-cloud/functions-framework --target=main",
+    "build": "bun run build:backend && bun run build:frontend && cp package.json build/ && bun install --cwd build --production --frozen-lockfile",
+    "deploy": "bun run build && gcloud beta run deploy nodejs-http-function --source build --function main --base-image nodejs20 --region europe-west1 --allow-unauthenticated",
+    "build:frontend": "bun build src/frontend/index.tsx --sourcemap=linked --outdir build/public && cp src/frontend/index.html build/public",
+    "build:backend": "bun build src/backend/index.ts --target node --outdir build"
   },
   "devDependencies": {
     "@types/bun": "latest",
     "@types/react": "^18.3.13",
-    "@types/react-dom": "^18.3.1"
+    "@types/react-dom": "^18.3.1",
+    "express": "^4.21.2"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
   },
   "dependencies": {
-    "@elastic/eui": "^98.1.0",
+    "@google-cloud/functions-framework": "^3.4.3",
     "@types/file-saver": "^2.0.7",
     "axios": "^1.7.8",
     "file-saver": "^2.0.5",

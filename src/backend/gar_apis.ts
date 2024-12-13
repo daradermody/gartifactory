@@ -1,10 +1,12 @@
 import axios from 'axios'
-import { $ } from "bun";
+import { execSync } from "node:child_process";
 
-const token = Bun.env.ACCESS_TOKEN || await $`gcloud auth print-access-token`.text()
+const token = process.env.ACCESS_TOKEN || execSync(`gcloud auth print-access-token`).toString().trim();
+const project = process.env.PROJECT || 'siren-cicd'
+const location = process.env.LOCATION || 'europe-west1'
 
 const garApi = axios.create({
-  baseURL: `https://artifactregistry.googleapis.com/v1/projects/${Bun.env.PROJECT}/locations/${Bun.env.LOCATION}`,
+  baseURL: `https://artifactregistry.googleapis.com/v1/projects/${project}/locations/${location}`,
   headers: {
     'Accept': 'application/json',
     'Authorization': `Bearer ${token}`
@@ -39,7 +41,7 @@ export async function getPackages(repo: string): Promise<string[]> {
     {
       params: {
         pageSize: 99999,
-        filter: `name="projects/${Bun.env.PROJECT}/locations/${Bun.env.LOCATION}/repositories/${repo}/packages/*siren*"`
+        filter: `name="projects/${project}/locations/${location}/repositories/${repo}/packages/*siren*"`
       }
     })
     const packages = response.data.packages || []
@@ -84,7 +86,7 @@ export async function getFiles(repo: string, pkg: string, version: string): Prom
     {
       params: {
         pageSize: 99999,
-        filter: `name="projects/${Bun.env.PROJECT}/locations/${Bun.env.LOCATION}/repositories/${repo}/files/${encodedPkg}/${version}/*"`
+        filter: `name="projects/${project}/locations/${location}/repositories/${repo}/files/${encodedPkg}/${version}/*"`
       }
     })
   const files = response.data.files || []
