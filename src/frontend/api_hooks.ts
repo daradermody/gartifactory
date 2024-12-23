@@ -8,57 +8,55 @@ const api = axios.create({
 })
 
 export function useRepos() {
-  const [repos, setRepos] = useState<string[] | undefined>()
-
-  useEffect(() => {
-    api.get<string[]>('/repos')
-      .then(response => setRepos(response.data))
-  }, [setRepos])
-
-  return {repos}
+  const { data: repos, loading, error } = useAsync(async () => {
+    const response = await api.get<string[]>('/repos')
+    return response.data
+  })
+  return {repos, loading, error}
 }
 
 export function usePackages(repo?: string) {
-  const [packages, setPackages] = useState<string[] | undefined>()
-
-  useEffect(() => {
+  const { data: packages, loading, error } = useAsync(async () => {
     if (repo) {
-      api.get<string[]>(`/repos/${repo}/packages`)
-        .then(response => setPackages(response.data))
-    } else {
-      setPackages(undefined)
+      const response = await api.get<string[]>(`/repos/${repo}/packages`)
+      return response.data
     }
-  }, [repo, setPackages])
-
-  return {packages}
+  }, [repo])
+  return {packages, loading, error}
 }
 
 export function useVersions(repo?: string, pkg?: string) {
-  const [versions, setVersions] = useState<string[] | undefined>()
-
-  useEffect(() => {
+  const { data: versions, loading, error } = useAsync(async () => {
     if (repo && pkg) {
-      api.get<string[]>(`/repos/${repo}/packages/${pkg}/versions`)
-        .then(response => setVersions(response.data))
-    } else {
-      setVersions(undefined)
+      const response = await api.get<string[]>(`/repos/${repo}/packages/${pkg}/versions`)
+      return response.data
     }
-  }, [repo, pkg, setVersions])
-
-  return {versions}
+  }, [repo, pkg])
+  return {versions, loading, error}
 }
 
 export function useFiles(repo?: string, pkg?: string, version?: string) {
-  const [files, setFiles] = useState<GarFile[] | undefined>()
+  const { data: files, loading, error } = useAsync(async () => {
+    if (repo && pkg && version) {
+      const response = await api.get<GarFile[]>(`/repos/${repo}/packages/${pkg}/versions/${version}/files`)
+      return response.data
+    }
+  }, [repo, pkg, version])
+  return {files, loading, error}
+}
+
+function useAsync<T>(fn: () => Promise<T>, deps: any[] = []): { data?: T; loading: boolean; error?: Error } {
+  const [data, setData] = useState<T>()
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState()
 
   useEffect(() => {
-    if (repo && pkg && version) {
-      api.get<GarFile[]>(`/repos/${repo}/packages/${pkg}/versions/${version}/files`)
-        .then(response => setFiles(response.data))
-    } else {
-      setFiles(undefined)
-    }
-  }, [repo, pkg, version, setFiles])
+    setLoading(true)
+    fn()
+      .then(setData)
+      .catch(setError)
+      .finally(() => setLoading(false))
+  }, [...deps, setData, setError, setLoading])
 
-  return {files}
+  return { data, loading, error }
 }

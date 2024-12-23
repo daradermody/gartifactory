@@ -34,7 +34,7 @@ async function callApi(req: Request, res: Response): Promise<void> {
       const response = await downloadFile(repo, pkg, version, filename)
       res.header('Content-Type', response.headers['content-type'] || 'application/octet-stream')
       res.header('Content-Length', response.headers['content-length'] || '')
-      res.header('Content-Disposition', response.headers['content-disposition'] || 'inline')
+      res.header('Content-Disposition', `attachment; filename="${filename}"`)
       response.data.pipe(res)
     } else {
       res.status(404)

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   version="1.1"
+   id="svg1"
+   width="95.464432"
+   height="114.49844"
+   viewBox="0 0 95.464429 114.49845"
+   sodipodi:docname="logo.svg"
+   xml:space="preserve"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><defs
+     id="defs1"><filter
+       style="color-interpolation-filters:sRGB"
+       inkscape:label="Drop Shadow"
+       id="filter67"
+       x="-0.035928144"
+       y="-0.037569886"
+       width="1.0718563"
+       height="1.0751398"><feFlood
+         result="flood"
+         in="SourceGraphic"
+         flood-opacity="0.482353"
+         flood-color="rgb(0,0,0)"
+         id="feFlood66" /><feGaussianBlur
+         result="blur"
+         in="SourceGraphic"
+         stdDeviation="0.200000"
+         id="feGaussianBlur66" /><feOffset
+         result="offset"
+         in="blur"
+         dx="0.000000"
+         dy="0.000000"
+         id="feOffset66" /><feComposite
+         result="comp1"
+         operator="in"
+         in="flood"
+         in2="offset"
+         id="feComposite66" /><feComposite
+         result="comp2"
+         operator="over"
+         in="SourceGraphic"
+         in2="comp1"
+         id="feComposite67" /></filter></defs><sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="2.2318672"
+     inkscape:cx="-62.727747"
+     inkscape:cy="42.341229"
+     inkscape:window-width="1638"
+     inkscape:window-height="1237"
+     inkscape:window-x="618"
+     inkscape:window-y="58"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="g1" /><g
+     inkscape:groupmode="layer"
+     inkscape:label="Image"
+     id="g1"
+     transform="translate(-11.719691,-3.8983858)"><path
+       style="display:inline;fill:#61a63a;fill-opacity:1"
+       d="m 12.464115,114.23683 v -4.16 h 47.360002 47.360003 v 4.16 4.16 H 59.824117 12.464115 Z M 51.824117,98.40016 C 30.525316,94.752283 14.618341,78.013739 12.126646,56.627426 9.8643444,45.575713 16.306278,11.959947 50.003826,4.7426195 55.12498,3.6457728 63.396889,3.5926768 68.657416,4.730543 87.798138,8.8707256 101.92042,22.91009 106.06334,41.916824 c 1.82333,7.833457 0.28422,17.043526 0.21626,17.44 -4.39479,25.638323 -29.138971,43.379336 -54.455483,39.043336 z m 14.4,-8.68663 C 82.257857,86.894848 94.713115,74.399884 97.760291,58.076824 98.760296,52.782898 98.393046,47.086948 97.146341,41.855854 91.089376,19.23333 68.599188,8.912975 50.384117,13.575225 35.707356,17.331824 25.219151,27.817278 21.554957,42.396824 c -0.796072,3.167507 -1.682822,8.643901 -0.632667,15.026295 1.356807,8.246104 5.132322,15.620203 11.003538,21.491419 l 2.706094,2.706093 3.169488,2.110014 c 8.535194,5.682109 18.364349,7.751113 28.422707,5.982885 z"
+       id="path67"
+       sodipodi:nodetypes="cccccccccsssssssssssssscss" /><g
+       style="display:inline;overflow:visible"
+       id="g2"
+       transform="matrix(33.333333,0,0,33.333333,-471.91881,-379.4065)"><g
+         id="g18"
+         transform="matrix(0.08438162,0,0,0.08438162,14.946124,11.880862)">
+	
+	
+	
+	
+	
+	
+	
+	
+	<g
+   transform="matrix(2.0557954,0,0,2.0557954,1.0868537,-0.03352084)"
+   id="g17"
+   style="display:inline;filter:url(#filter67)">
+		<g
+   transform="translate(4.54)"
+   id="g10">
+			<polygon
+   fill-rule="evenodd"
+   fill="#5c85de"
+   points="3.6,0.6 0.6,-1 -2.4,0.6 0.6,2.2 "
+   id="polygon8" />
+			<polygon
+   fill-rule="evenodd"
+   fill="#3367d6"
+   points="1,2.8 1,5.9 3.9,4.3 3.9,1.2 "
+   id="polygon9" />
+			<polygon
+   fill-rule="evenodd"
+   fill="#3367d6"
+   points="0.3,5.9 0.3,2.8 -2.7,1.2 -2.7,4.3 "
+   id="polygon10" />
+		</g>
+		<g
+   transform="translate(0,7.97619)"
+   id="g13">
+			<polygon
+   fill-rule="evenodd"
+   fill="#5c85de"
+   points="4.5,-1.5 1.7,-3.1 -1.2,-1.5 1.7,0.1 "
+   id="polygon11" />
+			<polygon
+   fill-rule="evenodd"
+   fill="#3367d6"
+   points="1.9,0.6 1.9,3.8 4.8,2.2 4.8,-1 "
+   id="polygon12" />
+			<polygon
+   fill-rule="evenodd"
+   fill="#3367d6"
+   points="1.4,3.8 1.4,0.6 -1.5,-1 -1.5,2.2 "
+   id="polygon13" />
+		</g>
+		<g
+   transform="translate(9.36,7.97619)"
+   id="g16">
+			<polygon
+   fill-rule="evenodd"
+   fill="#5c85de"
+   points="2.2,-1.5 -0.7,-3.1 -3.6,-1.5 -0.7,0.1 "
+   id="polygon14" />
+			<polygon
+   fill-rule="evenodd"
+   fill="#3367d6"
+   points="-0.4,0.6 -0.4,3.8 2.5,2.2 2.5,-1 "
+   id="polygon15" />
+			<polygon
+   fill-rule="evenodd"
+   fill="#3367d6"
+   points="-1,3.8 -1,0.6 -3.9,-1 -3.9,2.2 "
+   id="polygon16" />
+		</g>
+	</g>
+</g></g></g></svg>

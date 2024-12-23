@@ -1,4 +1,6 @@
-interface Selection {
+import {useEffect, useState} from 'react'
+
+export interface Selection {
   repo?: string;
   pkg?: string;
   version?: string;
@@ -6,10 +8,12 @@ interface Selection {
 }
 
 export function useSavedSelection() {
-  const savedSelection = JSON.parse(localStorage.getItem('previousSelection') || '{}') as Selection
+  const savedSelection = localStorage.getItem('selection')
+  const [selection, setSelection] = useState<Selection>(savedSelection ? JSON.parse(savedSelection) : {})
 
-  return {
-    savedSelection,
-    updateSavedSelection: (selection: Selection) => localStorage.setItem('previousSelection', JSON.stringify(selection))
-  }
+  useEffect(() => {
+    localStorage.setItem('selection', JSON.stringify(selection))
+  }, [selection]);
+
+  return { selection, setSelection }
 }

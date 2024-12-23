@@ -1,5 +1,6 @@
 import axios from 'axios'
 import { execSync } from "node:child_process";
+import { compareVersions } from 'compare-versions';
 
 const token = process.env.ACCESS_TOKEN || execSync(`gcloud auth print-access-token`).toString().trim();
 const project = process.env.PROJECT || 'siren-cicd'
@@ -66,8 +67,9 @@ export async function getVersions(repo: string, pkg: string): Promise<string[]> 
     })
   const versions = response.data.versions || []
   return versions
-    .toSorted((a, b) => a.createdTime > b.createdTime ? -1 : 1)
     .map(version => version.name.split('/').at(-1)!)
+    // .toSorted(compareVersions)
+    .toReversed()
 }
 
 interface GarVersionsResponse {
