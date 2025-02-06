@@ -1,18 +1,16 @@
-# gar-provider
+# Gartifactory
 
-To install dependencies:
+### Setup
+1. Install [Bun](https://bun.sh/):
+   ```shell
+   curl -fsSL https://bun.sh/install | bash
+   ```
+2. Install dependencies:
+   ```shell
+   bun install
+   ```
 
-```bash
-bun install
-```
-
-See `.env.sample` for the environment variables required.
-
-To run:
-
-```bash
+### To run locally
+```shell
 bun start
 ```
-
-Server available at http://localhost:3000
-
